@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <BOOST_ROOT>c:\Boost</BOOST_ROOT>
+    <BOOST_VERSION>1_72</BOOST_VERSION>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_PropertySheetDisplayName>Boost_1_72</_PropertySheetDisplayName>
+    <IncludePath>$(BOOST_ROOT)\include\boost-$(BOOST_VERSION);$(IncludePath)</IncludePath>
+    <LibraryPath>$(BOOST_ROOT)\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(BOOST_ROOT)\include\boost-$(BOOST_VERSION);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(BOOST_ROOT)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="BOOST_ROOT">
+      <Value>$(BOOST_ROOT)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="BOOST_VERSION">
+      <Value>$(BOOST_VERSION)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

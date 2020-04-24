@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <PYTHON_ROOT>C:\Users\yshira\Anaconda3\envs\py36_var</PYTHON_ROOT>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_PropertySheetDisplayName>Python_3_6</_PropertySheetDisplayName>
+    <IncludePath>$(PYTHON_ROOT)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(PYTHON_ROOT)\libs;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(PYTHON_ROOT)\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(PYTHON_ROOT)\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="PYTHON_ROOT">
+      <Value>$(PYTHON_ROOT)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
